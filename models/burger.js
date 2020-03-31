@@ -1,9 +1,22 @@
+var orm = require("../config/orm.js");
 
+var burger = {
+    selectAll: function(cb) {
+        orm.selectAll("burgers", function(res){
+            cb(res);
+        });
+    }
+    insertOne: function(valOfCol, valOfOtherCol, cb) {
+    orm.insertOne("burgers", valOfCol, valOfOtherCol, function(res){
+        cb(res);
+    });
+    }
+    updateOne: function(columnInput, condition, cb) {
+        orm.updateOne("burgers", columnInput, condition, function(res){
+            cb(res);
+        });
+    }
+};
 
-var fs = require("fs");
-var path = require("path");
-var Sequelize = require("sequelize");
-var basename = path.basename(module.filename);
-var env = process.env.NODE_ENV || "development";
-var config = require(__dirname + "/../config/config.json")[env];
-var db = {};
+module.exports = burger;
+
