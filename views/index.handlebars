@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="text-center">
         <img src="../public/assets/img/burger.png">
@@ -9,7 +10,7 @@
             <ul class="list_group">
                 {{#each burgers}}
                     {{#unless devoured}}
-                        {{> burgers/burgerNotDevoured-block}}
+                        {{> burgerNotDevoured-block}}
                     {{/unless}}
                 {{/each}}
             </ul>
@@ -21,7 +22,7 @@
             <ul class="list-group">
                 {{#each burgers}}
                     {{#if devoured}}
-                        {{> burgers/burgerDevoured-block}}
+                        {{> burgerDevoured-block}}
                     {{/if}}
                 {{/each}}
 
